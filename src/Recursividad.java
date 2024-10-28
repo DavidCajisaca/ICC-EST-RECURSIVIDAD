@@ -1,0 +1,49 @@
+
+
+public class Recursividad {
+    public int factorial(int n) {
+        //Caso base :  n sea 0! y 1! son iguales a 1 
+        System.out.println("Calculando el factorial de " + n + "");
+        if (n == 0 || n == 1) {
+            System.out.println("Factorial de " + n + " es 1");
+            return 1;
+        }
+        int resultado = n * factorial(n - 1);
+        System.out.println("Factorial de " + n + " es " + resultado);
+        return resultado;
+            //return n * factorial(n - 1);
+        
+        
+    }
+    //calcular la suma de los n primeros numeros consecutivos
+    //n = 5 resultado = 15 (1+2+3+4+5)
+    public int sumaconsecutivos(int n) {
+        // caso base
+        if (n == 1) {
+            return 1;
+        }
+        System.out.println("los numeros a sumar son " + n + " y " + (n - 1) + "");
+        return n + sumaconsecutivos(n - 1);
+    }
+    //calcular la potencia de un numero base elevado a un exponente
+    public int potencia(int base, int exponente) {
+        //caso base
+        if (exponente == 0) {
+            return 1;
+        }
+        int resultado = base * potencia(base, exponente - 1);
+        System.out.println("Potencia de " + base + " elevado a " + exponente + " es " + resultado + "");
+        return resultado;
+    }
+    //Crear un metodo  que sume los digitos de un numero entero
+    // si mando 456 sea igual a 15 (4+5+6)
+    public int sumadigitos(int n) {
+        //caso base
+        if (n == 0) {
+            return 0;
+        }
+        int resultado = n % 10 + sumadigitos(n / 10);
+        System.out.println("La suma de los digitos de " + n + " es " + resultado + "");
+        return resultado;
+    }
+}
