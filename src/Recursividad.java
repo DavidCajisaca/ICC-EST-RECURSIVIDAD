@@ -39,11 +39,12 @@ public class Recursividad {
     // si mando 456 sea igual a 15 (4+5+6)
     public int sumadigitos(int n) {
         //caso base
-        if (n == 0) {
-            return 0;
-        }
-        int resultado = n % 10 + sumadigitos(n / 10);
-        System.out.println("La suma de los digitos de " + n + " es " + resultado + "");
-        return resultado;
+       int suma = 0;
+       while (n > 0) {
+        suma += n % 10;
+        n /= 10;
+        System.out.println("Suma de los digitos de " + n + " es " + suma + "");
+       }
+       return suma;
     }
 }
