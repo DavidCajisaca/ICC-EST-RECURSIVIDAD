@@ -47,4 +47,17 @@ public class Recursividad {
        }
        return suma;
     }
+    // Metodo de fibonacci
+    public int fibonacci(int n) {
+        //caso base
+        if (n==0){
+            return 0;
+        }else if (n==1){
+            return 1;
+        }
+        // caso recursivo
+        return fibonacci(n-1)+fibonacci(n-2);
+    }     
+    
+    
 }
