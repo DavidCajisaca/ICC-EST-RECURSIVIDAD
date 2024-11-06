@@ -59,5 +59,31 @@ public class Recursividad {
         return fibonacci(n-1)+fibonacci(n-2);
     }     
     
-    
+    //Metodo de busqueda binaria con recursividad
+    public int busquedaBinaria(int[] array, int busqueda, int inicio, int fin) {
+        // caso base
+        if (inicio > fin) {
+            return -1;
+        }
+        int medio = (inicio + fin) / 2;
+        if (array[medio] == busqueda) {
+            return medio;
+        } else if (array[medio] < busqueda) {
+            return busquedaBinaria(array, busqueda, medio + 1, fin);
+        } else {
+            return busquedaBinaria(array, busqueda, inicio, medio - 1);
+        }
+    }
+    // Metodo de busqueda secuencial con recursividad   
+    public int busquedaSecuencial(int[] array, int busqueda, int indice) {
+        // caso base
+        if (indice == array.length) {
+            return -1;
+        }
+        if (array[indice] == busqueda) {
+            return indice;
+        } else {
+            return busquedaSecuencial(array, busqueda, indice + 1);
+        }
+    }
 }
